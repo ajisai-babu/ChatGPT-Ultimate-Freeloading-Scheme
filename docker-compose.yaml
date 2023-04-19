@@ -1,0 +1,19 @@
+version: "3"
+services:
+  redis:
+    image: redis:alpine
+    restart: always
+
+  chatgpt:
+    image: alpine:latest
+    platform: linux/amd64
+    ports:
+      - "9060:9060"
+    volumes:
+      - ./bin/ChatGpt-Linux:/app/ChatGpt
+      - ./config.yaml:/app/config.yaml
+      - ./url.txt:/app/url.txt
+    depends_on:
+       - redis
+    command: ["/app/ChatGpt", "-config", "/app/config.yaml"]
+    restart: always

@@ -1,0 +1,48 @@
+app:
+  name: "ChatGpt Reverse Proxy Pool"
+  version: "1.0.0"
+
+ginServer:
+  host: "0.0.0.0"
+  port: "9060"
+  authkey:
+    - "sk-**********"
+
+mysql:
+  host: "localhost"
+  port: "3306"
+  username: "root"
+  password: ""
+  dbname: "db_chatgpt"
+
+redis:
+  host: "redis"
+  port: "6379"
+  password:
+
+domainList:
+  filename:
+    - "./url.txt"
+    - "/app/url.txt"
+
+fofa:
+  email: ""
+  key: ""
+  query: "chatgpt-web"
+  size: "10000"
+#  指定定时更新fofa数据的间隔时间，单位是小时
+  interval: 72
+
+fofaCheck:
+# 接口检测超时时间，单位秒
+  timeout: 5
+  thread: 50
+# 指定定时清洗fofa数据的间隔时间，单位是小时
+  interval: 12
+
+chatGptCheck:
+# 接口检测超时时间，单位秒
+  timeout: 5
+  thread: 50
+# 指定定时检测chatgpt可用的间隔时间，单位是小时， 暂时未开启此功能。
+  interval: 1
