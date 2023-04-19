@@ -48,7 +48,7 @@
 
 ```shell
 git clone https://github.com/ba0gu0/ChatGPT-Ultimate-Freeloading-Scheme.git
-cd 520apkhook
+cd ChatGPT-Ultimate-Freeloading-Scheme
 ```
 
 * Linux
